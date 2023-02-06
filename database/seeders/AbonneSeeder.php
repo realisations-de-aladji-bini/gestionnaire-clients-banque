@@ -14,6 +14,6 @@ class AbonneSeeder extends Seeder
      */
     public function run()
     {
-        //
+        \App\Models\Abonne::factory(10)->create();
     }
 }

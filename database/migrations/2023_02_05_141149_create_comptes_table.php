@@ -19,11 +19,10 @@ return new class extends Migration
             $table->foreign('abonne_id')->references('id')->on('abonne')->onUpdate('cascade')->onDelete('cascade');
             $table->string('libelle');
             $table->string('description');
-            $table->int('agence');
+            $table->integer('agence');
             $table->string('banque');
-            $table->string('libelle');
-            $table->int('numero');
-            $table->int('rib');
+            $table->integer('numero');
+            $table->integer('rib');
             $table->float('montant');
             $table->string('domiciliation');
             $table->timestamps();

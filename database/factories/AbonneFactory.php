@@ -17,7 +17,11 @@ class AbonneFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'nom'=>fake()->lastName(),
+            'prenom'=>fake()->firstName(),
+            'email'=>fake()->unique()->safeEmail(),
+            'contact'=>fake()->phoneNumber(),
+            'active'=>fake()->boolean()
         ];
     }
 }
