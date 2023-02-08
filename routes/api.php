@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CompteController;
+use App\Http\Controllers\IntegrationController;
 use App\Http\Controllers\AbonneController;
 /*
 |--------------------------------------------------------------------------
@@ -33,7 +34,11 @@ use App\Http\Controllers\AbonneController;
     Route::put('/comptes/{id}', [CompteController::class,'update'])->name('modifier-abonne');
     Route::delete('/comptes/{id}', [CompteController::class,'destroy'])->name('supprimer-abonne');
 	Route::get('/stats', [CompteController::class,'statisticGeneral'])->name('statistiques-generales');
+    Route::get('/pplapi', [IntegrationController::class,'getppl'])->name('pplapi');
+    Route::get('/admindivisionapi', [IntegrationController::class,'getAdminDivisionDB'])->name('administrative-division-db');//Impossible d'acceder à la ressourceu : GuzzleHttp\Exception\RequestException: cURL error 60: SSL certificate problem: unable to get local issuer certificate (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://rawcdn.githack.com/kamikazechaser/administrative-divisions%02db/master/api/CI.json in file 
+    Route::get('/personnes/random', [IntegrationController::class,'getRandomPeople']);
     });
+    	//Intégration API
 
     Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

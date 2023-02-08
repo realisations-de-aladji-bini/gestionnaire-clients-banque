@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('religion');
             $table->string('pays');
             $table->string('indicatif');
-            $table->string('internet');
+            $table->boolean('internet');
             $table->timestamps();
         });
     }
