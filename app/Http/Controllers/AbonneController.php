@@ -10,13 +10,12 @@ use Illuminate\Support\Facades\Validator;
 class AbonneController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Retourner la liste des abonnes
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //Retourner la liste des abonnes
         return response()->json([
             'hasError'=>false,
             'message'=>"Liste abonnes",
@@ -24,7 +23,7 @@ class AbonneController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Ajoute un nouveau client dans la base.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -60,7 +59,7 @@ class AbonneController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Affiche les détails d'un client donné.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -84,7 +83,7 @@ class AbonneController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Modifie les informations d'un client.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -118,13 +117,13 @@ class AbonneController extends Controller
 
         return response()->json([
             'hasError'=>false,
-            'message'=>$request->get('nom')." a été ajouté avec succes",
+            'message'=>$request->get('nom')." a été modifié avec succes",
             'data'=> $abonne
         ]);
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Supprime un client de la base de données
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -135,7 +134,7 @@ class AbonneController extends Controller
         if($abonne == null){
             return response()->json([
             'hasError'=>true,
-            'message'=>"Une erreur est survenue lors du traitement: Abonne".$id."n'existe pas",
+            'message'=>"Une erreur est survenue lors de la suppression : Abonne".$id."n'existe pas",
             ]);
         }
         $abonne->delete();
@@ -181,8 +180,8 @@ class AbonneController extends Controller
             'data'=> $comptes_abonne
         ]);
     }
+    
     //Fonction qui lie un abonné à un compte
-
     public function lierCompteAbonne(Request $request){
         $compte = Compte::where('id', $request->get('compteId'))->first();
             if($compte == null){
@@ -200,7 +199,7 @@ class AbonneController extends Controller
                 ]);
     }
      //Fonction qui renvoie les statistiques d'un abonné
-     public function statisticAbonne($id){
+    public function statisticAbonne($id){
 
 
         $comptes_abonne = Abonne::join('comptes', 'comptes.abonne_id', '=', 'abonnes.id')
@@ -222,6 +221,6 @@ class AbonneController extends Controller
                'Nombre de comptes :'=>$comptes_abonne['total_comptes'],
                'Montant total :'=>$comptes_abonne['montant_total'],
            ]
-       ]);
+    ]);
    }
 }

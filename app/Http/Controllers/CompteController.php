@@ -10,13 +10,12 @@ use Illuminate\Support\Facades\Validator;
 class CompteController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Renvoie la liste de tous les comptes de la bd.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //Retourner la liste des perosnne
         return response()->json([
             'hasError'=>false,
             'message'=>"Liste des comptes",
@@ -24,7 +23,7 @@ class CompteController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Ajoute un nouveau compte.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -68,7 +67,7 @@ class CompteController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Affiche les détails d'un compte donné.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -92,7 +91,7 @@ class CompteController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Modifie un compte existant
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -140,7 +139,7 @@ class CompteController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Supprime un compte de la bd.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
