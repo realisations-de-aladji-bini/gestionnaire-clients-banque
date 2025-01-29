@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     /**
-     * Run the migrations.
+     * la table "abonnes" représentant les clients de la banque 
      *
      * @return void
      */
@@ -25,7 +25,7 @@ return new class extends Migration
     }
 
     /**
-     * Reverse the migrations.
+     * On supprime la table, si elle existe, pour la recréer.
      *
      * @return void
      */
