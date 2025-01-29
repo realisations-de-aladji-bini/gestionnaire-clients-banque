@@ -9,7 +9,7 @@ class DatabaseSeeder extends Seeder
 {
     /**
      * Seed the application's database.
-     *
+     * On insère 10 éléments dans la table "abonnes" et 30 éléments dans "comptes".
      * @return void
      */
     public function run()

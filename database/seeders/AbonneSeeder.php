@@ -8,7 +8,7 @@ use Illuminate\Database\Seeder;
 class AbonneSeeder extends Seeder
 {
     /**
-     * Run the database seeds.
+     * On insère 10 éléments dans la table "abonnes".
      *
      * @return void
      */
