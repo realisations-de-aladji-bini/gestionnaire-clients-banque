@@ -23,7 +23,7 @@ Route::middleware('auth:sanctum')->group(function () {
     //Endpoints des abonnés
     Route::get('/abonnes', [AbonneController::class,'index'])->name('liste-abonnes');// Liste des clients
     Route::get('/abonnes/{id}', [AbonneController::class,'show'])->name('infos-abonne'); //Détails d'un client
-    Route::post('/abonnes', [AbonneController::class,'store'])->name('ajouter-abonne'); // Ajout d'un nouvel client
+    Route::post('/abonnes', [AbonneController::class,'store'])->name('ajouter-abonne'); // Ajout d'un nouveau client
     Route::put('/abonnes/{id}', [AbonneController::class,'update'])->name('modifier-abonne'); //Modification d'un client existant
     Route::delete('/abonnes/{id}', [AbonneController::class,'destroy'])->name('supprimer-abonne'); // Suppression d'un client
     Route::get('/abonnes/comptes', [AbonneController::class,'comptesAbonnes'])->name('comptes-abonnes'); // Liste des clients avec leurs comptes respectifs
