@@ -2,6 +2,30 @@
 Ce projet back-end réalisé en Laravel développe des APIs d'une application de gestion des clients d'une banque. Ces clients sont appelés "abonnes" dans le code. 
 Il expose des endpoints CRUD pour les clients, les comptes et les statistiques générales dans le fichier api.php du répertoire routes. Des seeders sont mis en place vous permettant donc de peupler votre bd une fois que l'aurez créée.
 
+## Fonctionnalités
+
+#### Gestion des clients 
+    - Liste de tous les clients
+    - Liste de tous les clients avec leurs comptes respectifs
+    - Ajout d'un nouveau client
+    - Infos d'un client
+    - Détails d'un client avec ses comptes
+    - Modification des infos d'un client existant
+    - Suppression d'un client
+
+#### Gestion des comptes clients
+    - Liste de tous les comptes
+    - Ajout d'un nouveau compte
+    - Détails d'un compte
+    - Modification des détails d'un compte
+    - Liaison d'un client à son compte
+    - Retrouver les comptes d'un client donné
+
+#### Statistiques
+    - Statistiques d'un client
+    - Statistiques générales
+    
+
 ## Installation et exécution
 
 Il faut avoir installé Laravel sur votre machine hôte. Voir le [guide d'installation](https://laravel.com/docs/11.x/installation) sur le site officiel de Laravel [ici](https://laravel.com/docs/11.x/installation) 
